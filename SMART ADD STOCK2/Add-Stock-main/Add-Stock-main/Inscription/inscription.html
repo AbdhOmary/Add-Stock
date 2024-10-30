@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <title>SMART ADD STOCK</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a href="#" class="logo">SMART ADD STOCK</a>
+
+        <div class="nav-center">
+          <ul class="nav-links">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Abonnement</a></li>
+            <li><a href="#">Ressources</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-buttons">
+          <a href="#" class="rdv">Prise de RDV</a>
+          <a href="#" class="sign-up">Sign Up</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="logo1">
+        <img src="Image1.png" alt="Smart Add Stock" />
+      </div>
+      <div class="form-container">
+        <form id="form" class="form" action="#">
+          <section class="-account-container">
+            <span class="title">VOTRE ENTREPRISE</span>
+
+            <div class="row">
+              <input
+                class="fill-w"
+                id="NOM DE L'ENTREPRISE"
+                name="NOM DE L'ENTREPRISE"
+                type="text"
+                placeholder=" NOM COMMERCIAL*"
+                required
+              />
+            </div>
+            <div class="row">
+              <input
+                class="fill-w"
+                id="companyName"
+                name="companyName"
+                type="text"
+                placeholder="SIRET*"
+                required
+              />
+            </div>
+            <div class="row">
+              <input
+                class="fill-w"
+                id="salesRepName"
+                name="salesRepName"
+                type="text"
+                placeholder=" TYPE D'ENTREPRISE*"
+                required
+              />
+            </div>
+            <div class="row form-group">
+              <div class="col col-1">
+                <input
+                  class="fill-w"
+                  id="city"
+                  name="city"
+                  type="text"
+                  placeholder="VILLE*"
+                  required
+                />
+              </div>
+              <div class="col col-2">
+                <select class="fill-w" id="pays" name="pays" required>
+                  <option value="" disabled selected hidden class="placeholder">
+                    Pays*
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <input
+                class="fill-w"
+                id="contractorLicenseNumber"
+                name="contractorLicenseNumber"
+                type="text"
+                placeholder="Type d'entreprise*"
+                required
+              />
+            </div>
+          </section>
+          <section class="-account-container">
+            <span class="title">Vos coordonnées.</span>
+            <div class="row form-group">
+              <div class="col col-1">
+                <input
+                  class="fill-w"
+                  id="firstName"
+                  name="firstName"
+                  type="text"
+                  placeholder="NOM*"
+                  required
+                />
+              </div>
+              <div class="col col-2">
+                <input
+                  class="fill-w"
+                  id="lastName"
+                  name="lastName"
+                  type="text"
+                  placeholder="PRENOM*"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <input
+                class="fill-w"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Votre adresse mail*"
+                required
+              />
+            </div>
+            <div class="row">
+              <input
+                class="fill-w"
+                onchange="mobileFormat()"
+                onblur="mobileFormat()"
+                onkeypress="return isNumberKey(event)"
+                id="mobile"
+                name="mobile"
+                type="text"
+                placeholder="Numero de contact*"
+                required
+              />
+            </div>
+            <div class="row">
+              <textarea
+                class="fill-w"
+                id="addtionalInfo"
+                name="addtionalInfo"
+                type="text"
+                placeholder="Message et/ou inormations complémentaire"
+              ></textarea>
+            </div>
+          </section>
+          <div class="terms">
+            <span
+              >Traitement des données Personnelles aux sens de l'article n° 196
+              (2003/30/June) ex article 13 de la loi n. 675/96. les données
+              obligatoires insérées pour contacter ...*</span
+            >
+          </div>
+
+          <div class="actions">
+            <input
+              class="cancel"
+              type="button"
+              value="Annulé"
+              onclick="cancel()"
+            />
+            <input
+              class="submit"
+              type="submit"
+              value="Envoyé"
+              onSubmit="submitForm()"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="hideModal()">&times;</span>
+        <div class="repsonse-container">
+          <div class="logo">
+            <img src="https://vitejs.dev/logo.svg" alt="LogoAddStock" />
+          </div>
+          <div class="message">
+            <h2>You're all set!</h2>
+            <span>An team member will reach out to you shortly.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-content">
+        <h3>SMART ADD STOCK</h3>
+        <p>Utilisez notre plateforme pour une gestion smart et efficace.</p>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="style.js"></script>
+  </body>
+</html>
